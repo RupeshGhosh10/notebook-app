@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "deploy": "cd ../client && npm run build && cd ../server && node index.js"
+    "dev": "nodemon index.js"
   },
   "author": "rupeshghosh10",
   "license": "ISC",

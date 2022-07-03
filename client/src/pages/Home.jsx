@@ -5,12 +5,15 @@ import Note from '../components/Note';
 import NotesList from '../components/NotesList';
 import Search from '../components/Search';
 import { ReactComponent as Spinner } from '../assets/spinner.svg';
+import Popup from '../components/Popup';
 
 const Home = () => {
 
   const [notes, setNotes] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [currentNote, setCurrentNote] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,10 +32,17 @@ const Home = () => {
       await deleteNote(currentNote.id);
       setNotes(notes.filter(x => x.id !== currentNote.id));
       setCurrentNote(null);
+      setShowPopup(true);
     }
     catch (ex) {
-      console.log('Something went wrong!');
+      setError(true);
+      setShowPopup(true);
     }
+  }
+
+  const handlePopUpClick = () => {
+    setShowPopup(false);
+    setError(false);
   }
 
   return (
@@ -72,6 +82,19 @@ const Home = () => {
               </button>
             </div>
           </>}
+        {showPopup && !error &&
+          <Popup
+            text='Succesfully Delete Note'
+            buttonText='OK'
+            handleClick={handlePopUpClick}
+          />}
+        {showPopup && error &&
+          <Popup
+            text='Error! Failed to Delete Note'
+            buttonText='OK'
+            isError={true}
+            handleClick={handlePopUpClick}
+          />}
       </div>
     </div>
   );
