@@ -43,7 +43,7 @@ const Home = () => {
           setSearchText={setSearchText}
         />
         {notes.length === 0 && <Spinner
-          className='w-28 h-28 mx-auto mt-10 md:mt-20 text-gray-200 animate-spin fill-gray-300 dark:fill-gray-800'
+          className='w-28 h-28 mx-auto mt-10 md:mt-20 text-gray-200 animate-spin fill-gray-400 dark:fill-gray-600'
         />}
         {notes.length > 0 &&
           <NotesList
