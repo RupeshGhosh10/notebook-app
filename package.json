@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "heroku-prebuild": "cd client && npm install && npm run build && cd ../server && npm install",
+    "heroku-prebuild": "cd server && npm install",
     "start": "cd server && npm run start",
     "deploy": "git push heroku master" 
   },
