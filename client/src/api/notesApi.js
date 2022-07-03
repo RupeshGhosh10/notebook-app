@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-//const url = process.env.REACT_APP_API_URI ?? 'http://localhost:3001/api/notes';
-const url = 'http://localhost:3001/api/notes';
+const url = process.env.REACT_APP_API_URI ?? 'http://localhost:3001/api/notes';
 
 export const getNotes = async () => {
   const res = await axios.get(url);
