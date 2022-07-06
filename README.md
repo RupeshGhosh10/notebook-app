@@ -1,8 +1,9 @@
 # Notebook App - Notily
-Notebook app to add, manage and organize group of markdown based notes.
+- Notebook app to add, manage and organize group of notes
+- markdown based notes
+- dark/light theme
 
 ## Build With
-
 - React
 - Tailwind CSS
 - Node.js
